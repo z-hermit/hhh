@@ -318,24 +318,18 @@
 
       
         <p>教程写的不详细，没碰到的情况一律去官方文档去找吧，或者去提问<br><a href="https://hexo.io/zh-cn/docs/writing.html" target="_blank" rel="noopener">hexo中文文档</a></p>
-<p>##安装node.js以及git，不多说了</p>
-<p>##安装hexo</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure>
-<p>##新建博客</p>
-<p>在一个空文件夹，命令行转到这里</p>
+<h2 id="安装node-js以及git，不多说了"><a href="#安装node-js以及git，不多说了" class="headerlink" title="安装node.js以及git，不多说了"></a>安装node.js以及git，不多说了</h2><h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure>
+<h2 id="新建博客"><a href="#新建博客" class="headerlink" title="新建博客"></a>新建博客</h2><p>在一个空文件夹，命令行转到这里</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
 <p>或者在folder文件夹中初始化</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;folder&gt;</span><br></pre></td></tr></table></figure>
-<p>##配置信息</p>
-<p>修改在blog根目录下的_config.yml，添加repo地址：</p>
+<h2 id="配置信息"><a href="#配置信息" class="headerlink" title="配置信息"></a>配置信息</h2><p>修改在blog根目录下的_config.yml，添加repo地址：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: https://github.com/username/username.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 <p>博客信息_config.yml下自己看着写</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: </span><br><span class="line">subtitle: </span><br><span class="line">description: </span><br><span class="line">author: </span><br><span class="line">language:</span><br></pre></td></tr></table></figure>
 <p>记得冒号后面一定要有个空格，坑了我好久</p>
-<p>##CNAME文件</p>
-<p>因为使用了自己的域名，而hexo每次deploy的时候hexo都会重新生成文件，所以直接加在github是不好使的，这个CNAME文件需要放在 source文件夹根目录下,之后每次生成就会生成在.deploy_git根目录下了</p>
-<p>##初次使用</p>
-<p>新建文章</p>
+<h2 id="CNAME文件"><a href="#CNAME文件" class="headerlink" title="CNAME文件"></a>CNAME文件</h2><p>因为使用了自己的域名，而hexo每次deploy的时候hexo都会重新生成文件，所以直接加在github是不好使的，这个CNAME文件需要放在 source文件夹根目录下,之后每次生成就会生成在.deploy_git根目录下了</p>
+<h2 id="初次使用"><a href="#初次使用" class="headerlink" title="初次使用"></a>初次使用</h2><p>新建文章</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &lt;title&gt;</span><br></pre></td></tr></table></figure>
 <p>因为是.md文件，所以没用过markdown的同学自己查查markdown文档</p>
 <p>生成网页文件</p>
@@ -346,8 +340,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 <p>部署到GitHub<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></p>
 <p>之后可以通过浏览器浏览了</p>
-<p>##使用脚本</p>
-<p>npm 允许在package.json文件里面，使用scripts字段定义脚本命令</p>
+<h2 id="使用脚本"><a href="#使用脚本" class="headerlink" title="使用脚本"></a>使用脚本</h2><p>npm 允许在package.json文件里面，使用scripts字段定义脚本命令</p>
 <p>在package.json文件中第一个大括号中添加，注意要加一个逗号</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"test"</span>: <span class="string">"hexo clean &amp;&amp; hexo g &amp;&amp; hexo s"</span>,</span><br><span class="line">    <span class="string">"redeploy"</span>: <span class="string">"hexo clean &amp;&amp; hexo g &amp;&amp; hexo d"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>查看当前项目的所有 npm 脚本命令，可以使用</p>
@@ -355,21 +348,17 @@
 <p>运行脚本</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run order</span><br></pre></td></tr></table></figure>
 <p><a href="http://www.ruanyifeng.com/blog/2016/10/npm_scripts.html" target="_blank" rel="noopener">原理</a></p>
-<p>##使用其他主题</p>
-<p>我使用了next，你们随意。</p>
+<h2 id="使用其他主题"><a href="#使用其他主题" class="headerlink" title="使用其他主题"></a>使用其他主题</h2><p>我使用了next，你们随意。</p>
 <p>next的GitHub主页<br><a href="https://github.com/theme-next/hexo-theme-next/blob/master/docs/cn/README.md#%E5%8D%B3%E6%97%B6%E9%A2%84%E8%A7%88" target="_blank" rel="noopener">hexo-theme-next</a>，有使用说明以及一些大佬的使用样例，不多说了。</p>
 <p>找到_config.yml，把对应的主题目录名改下，把主题克隆到themes就行了</p>
-<p>##布局的讨论</p>
-<p><a href="https://hexo.io/zh-cn/docs/writing.html" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/writing.html</a><br><a href="https://www.jianshu.com/p/5a1e6d8c83af" target="_blank" rel="noopener">https://www.jianshu.com/p/5a1e6d8c83af</a></p>
-<p>##编辑器<br>我用的sublime，用了markdownpreview和markdownediting，感觉好用，Ctrl+B将.md转为.html，觉得generate麻烦的可以这样预览</p>
-<p>##插入图片</p>
-<p>确认_config.yml 中有 post_asset_folder:true<br>Hexo 提供了一种更方便管理 Asset 的设定：post_asset_folder<br>当您设置post_asset_folder为true参数后，在建立文件时，Hexo<br>会自动建立一个与文章同名的文件夹，您可以把与该文章相关的所有资源都放到那个文件夹，如此一来，您便可以更方便的使用资源。</p>
+<h2 id="布局的讨论"><a href="#布局的讨论" class="headerlink" title="布局的讨论"></a>布局的讨论</h2><p><a href="https://hexo.io/zh-cn/docs/writing.html" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/writing.html</a><br><a href="https://www.jianshu.com/p/5a1e6d8c83af" target="_blank" rel="noopener">https://www.jianshu.com/p/5a1e6d8c83af</a></p>
+<h2 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h2><p>我用的sublime，用了markdownpreview和markdownediting，感觉好用，Ctrl+B将.md转为.html，觉得generate麻烦的可以这样预览</p>
+<h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><p>确认_config.yml 中有 post_asset_folder:true<br>Hexo 提供了一种更方便管理 Asset 的设定：post_asset_folder<br>当您设置post_asset_folder为true参数后，在建立文件时，Hexo<br>会自动建立一个与文章同名的文件夹，您可以把与该文章相关的所有资源都放到那个文件夹，如此一来，您便可以更方便的使用资源。</p>
 <p>在hexo的目录下执行npm install <a href="https://github.com/CodeFalling/hexo-asset-image" target="_blank" rel="noopener">https://github.com/CodeFalling/hexo-asset-image</a> –save（需要等待一段时间）。</p>
 <p>完成安装后用hexo新建文章的时候会发现_posts目录下面会多出一个和文章名字一样的文件夹。图片就可以放在文件夹下面。</p>
 <p>只要使用 <img src="/2018/01/08/hexo搭建博客/logo.jpg" alt="logo"> 就可以插入图片。其中[]里面不写文字则没有图片标题。</p>
 <p>参考<a href="https://www.jianshu.com/p/c2ba9533088a" target="_blank" rel="noopener">https://www.jianshu.com/p/c2ba9533088a</a></p>
-<p>##添加tag</p>
-<p><a href="https://www.zhihu.com/question/29017171" target="_blank" rel="noopener">https://www.zhihu.com/question/29017171</a></p>
+<h2 id="添加tag"><a href="#添加tag" class="headerlink" title="添加tag"></a>添加tag</h2><p><a href="https://www.zhihu.com/question/29017171" target="_blank" rel="noopener">https://www.zhihu.com/question/29017171</a></p>
 <p>一篇文章多个tag如下设置：</p>
 <p>tags: </p>
 <ul>
@@ -469,8 +458,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -525,6 +523,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装node-js以及git，不多说了"><span class="nav-number">1.</span> <span class="nav-text">安装node.js以及git，不多说了</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装hexo"><span class="nav-number">2.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建博客"><span class="nav-number">3.</span> <span class="nav-text">新建博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置信息"><span class="nav-number">4.</span> <span class="nav-text">配置信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CNAME文件"><span class="nav-number">5.</span> <span class="nav-text">CNAME文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初次使用"><span class="nav-number">6.</span> <span class="nav-text">初次使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用脚本"><span class="nav-number">7.</span> <span class="nav-text">使用脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用其他主题"><span class="nav-number">8.</span> <span class="nav-text">使用其他主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#布局的讨论"><span class="nav-number">9.</span> <span class="nav-text">布局的讨论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编辑器"><span class="nav-number">10.</span> <span class="nav-text">编辑器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入图片"><span class="nav-number">11.</span> <span class="nav-text">插入图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加tag"><span class="nav-number">12.</span> <span class="nav-text">添加tag</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
