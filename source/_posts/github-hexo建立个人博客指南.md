@@ -96,7 +96,7 @@ username.你的域名后缀
 如果你和我一样，可以参考这篇[hexo搭建博客](http://www.smilebinary.club/2018/01/08/hexo搭建博客/)
 
 参考文档
-[](http://www.cnfeat.com/blog/2014/05/11/how-to-build-a-blog/)
-[](http://beiyuu.com/github-pages)
+http://www.cnfeat.com/blog/2014/05/11/how-to-build-a-blog/
+http://beiyuu.com/github-pages
 
 
