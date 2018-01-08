@@ -171,3 +171,45 @@ tags:
 ## 插件，YAML，ejs
 
 http://code.wileam.com/build-a-hexo-blog-and-optimize/
+
+## 优化和异地管理
+
+Hexo部署到GitHub上的文件，是.md（你的博文）转化之后的.html（静态网页）。因此，当你重装电脑或者想在不同电脑上修改博客时，没有之前的hexo文件，就不可能了。
+
+如果为每一个GitHubPages创建一个额外的仓库来存放Hexo网站文件没有必要，可以简答的利用了分支。
+
+创建一个新的分支（此处叫blog），设置blog为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件）
+
+使用git clone将仓库拷贝下来，删除.git之外的文件，将之前的hexo文件夹中的内容拷贝进来
+
+在package.json中添加脚本
+
+```bash
+{
+  ...
+  "scripts": {
+    "test": "hexo clean && hexo g && hexo s",
+    "init": "npm install",
+    "deploy": "git checkout blog && git add . && git commit && git push origin blog && hexo g && hexo d"
+  }
+}
+
+```
+
+依次执行git add .、git commit -m “…”、git push origin blog提交网站相关的文件
+
+完成。
+
+注意：_config.yml中的deploy参数，分支应为master
+
+## 博客管理流程
+
+clone博客仓库（已经有就不用了）
+
+转到 blog分支
+
+增删查改
+
+npm run init（如果刚clone下来没有安装依赖，和第一步配套）
+
+npm run deploy
