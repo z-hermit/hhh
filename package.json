@@ -20,6 +20,7 @@
   },
   "scripts": {
     "test": "hexo clean && hexo g && hexo s",
-    "redeploy": "hexo clean && hexo g && hexo d"
+    "init": "npm install",
+    "deploy": "git checkout blog && git add . && git commit && git push origin blog && hexo g && hexo d"
   }
 }
